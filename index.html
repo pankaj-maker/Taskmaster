@@ -1,32 +1,55 @@
-<!doctype html>
-<html lang="en" data-theme="light">
+<!DOCTYPE html>
+<html lang="en" data-theme="cupcake">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
-    
+    <title>Tasky</title>
+    <!-- icon -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css"
+    />
   </head>
   <body>
+    <!-- MARK:Navbar -->
     <div class="navbar bg-base-100">
-        <div class="flex-1">
-          <a class="btn btn-ghost text-xl">daisyUI</a>
-        </div>
-        <div class="flex-none">
-          <ul class="menu menu-horizontal px-1">
-            <li><a>Link</a></li>
-            <li>
-              <details>
-                <summary>Parent</summary>
-                <ul class="bg-base-100 rounded-t-none p-2">
-                  <li><a>Link 1</a></li>
-                  <li><a>Link 2</a></li>
-                </ul>
-              </details>
-            </li>
-          </ul>
+      <div class="flex-1">
+        <a class="btn btn-ghost text-xl">Taksey</a>
+      </div>
+      <div class="flex-none">
+        <a
+          href="http://github.com/Sneha14-Guta/Task-Tracker"
+          class="btn btn-square btn-ghost"
+        >
+          <i class="ti ti-brand-github text-2xl"></i>
+        </a>
+      </div>
+    </div>
+    <!-- MARK:Main -->
+    <main class="container h-screen flex items-center">
+      <div class="card bg-base-100 sm:w-89 md:w-96 mx-auto shadow-xl ">
+        <figure>
+          <img
+            src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
+            alt="Shoes"
+          />
+        </figure>
+        <div class="card-body">
+          <h2 class="card-title">TaskMaster &mdash; Orgnize youreself</h2>
+          <p>If a dog chews shoes whose shoes does he choose?</p>
+          <div class="card-actions justify-end">
+            <button class="btn btn-primary">Buy Now</button>
+          </div>
         </div>
       </div>
+    </main>
+    <footer class="footer footer-center bg-base-300 text-base-content p-4">
+      <aside>
+        <p>Copyright © {new Date().getFullYear()} - All right reserved by ACME Industries Ltd</p>
+      </aside>
+    </footer>
+
     <script type="module" src="src/main.js"></script>
   </body>
 </html>
