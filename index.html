@@ -4,52 +4,95 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tasky</title>
-    <!-- icon -->
+    <title>Taskey &mdash; Organize yourself!</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+
+    <!-- Tabler Icons -->
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css"
     />
   </head>
-  <body>
-    <!-- MARK:Navbar -->
+  <body class="font-figtree">
+    <!-- 
+      MARK: Navbar
+    -->
     <div class="navbar bg-base-100">
       <div class="flex-1">
-        <a class="btn btn-ghost text-xl">Taksey</a>
+        <a class="btn btn-ghost text-xl">Taskey</a>
       </div>
       <div class="flex-none">
         <a
-          href="http://github.com/Sneha14-Guta/Task-Tracker"
           class="btn btn-square btn-ghost"
+          href="https://github.com/gliese-sketch/taskey"
+          target="_blank"
         >
-          <i class="ti ti-brand-github text-2xl"></i>
+          <i class="ti ti-brand-github text-xl"></i>
         </a>
       </div>
     </div>
-    <!-- MARK:Main -->
-    <main class="container h-screen flex items-center">
-      <div class="card bg-base-100 sm:w-89 md:w-96 mx-auto shadow-xl ">
+
+    <!-- 
+      MARK: Main
+    -->
+    <main class="container h-screen flex justify-center items-center glass">
+      <div class="card bg-slate-200 w-64 sm:w-80 md:w-96 shadow-xl ">
         <figure>
           <img
-            src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-            alt="Shoes"
+            src="public/patterns.webp"
           />
         </figure>
         <div class="card-body">
-          <h2 class="card-title">TaskMaster &mdash; Orgnize youreself</h2>
-          <p>If a dog chews shoes whose shoes does he choose?</p>
-          <div class="card-actions justify-end">
-            <button class="btn btn-primary">Buy Now</button>
+          <h1 class="card-title mb-1">Taskey &mdash; Organize yourself!</h1>
+
+          <!-- Form -->
+          <form data-form>
+            <input
+              type="text"
+              placeholder="Add task"
+              class="input input-bordered w-full max-w-xs"
+            />
+          </form>
+
+          <!-- Task Container -->
+          <div class="form-control" data-task-container>
+            <!-- Single Task -->
+            <label class="label cursor-pointer">
+              <span class="label-text">Remember me</span>
+              <input
+                type="checkbox"
+                
+                class="checkbox checkbox-primary"
+              />
+            </label>
+            <label class="label cursor-pointer bg-slate-300 rounded p-2">
+              <span class="label-text">Remember me</span>
+              <input
+                type="checkbox"
+                checked="checked"
+                class="checkbox checkbox-primary"
+              />
+            </label>
           </div>
         </div>
       </div>
     </main>
+
+    <!-- 
+      MARK: Footer
+    -->
     <footer class="footer footer-center bg-base-300 text-base-content p-4">
       <aside>
-        <p>Copyright © {new Date().getFullYear()} - All right reserved by Pankaj pawar</p>
+        <p>
+          Copyright © {new Date().getFullYear()} - All right reserved by
+          <a href="https://github.com/gliese-sketch">Gliese Sketch</a>
+        </p>
       </aside>
     </footer>
 
+    <!-- Scripts -->
     <script type="module" src="src/main.js"></script>
   </body>
 </html>
