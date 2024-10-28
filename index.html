@@ -5,9 +5,12 @@
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Taskey &mdash; Organize yourself!</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap"
+      rel="stylesheet"
+    />
 
     <!-- Tabler Icons -->
     <link
@@ -26,7 +29,7 @@
       <div class="flex-none">
         <a
           class="btn btn-square btn-ghost"
-          href="https://github.com/gliese-sketch/taskey"
+          href="https://github.com/pankaj-maker/Taskmaster"
           target="_blank"
         >
           <i class="ti ti-brand-github text-xl"></i>
@@ -37,12 +40,10 @@
     <!-- 
       MARK: Main
     -->
-    <main class="container h-screen flex justify-center items-center glass">
-      <div class="card bg-slate-200 w-64 sm:w-80 md:w-96 shadow-xl ">
+    <main class="min-h-0 h-screen flex justify-center items-center glass">
+      <div class="card bg-slate-200 w-64 sm:w-80 md:w-96 shadow-xl">
         <figure>
-          <img
-            src="public/patterns.webp"
-          />
+          <img src="public/patterns.webp" />
         </figure>
         <div class="card-body">
           <h1 class="card-title mb-1">Taskey &mdash; Organize yourself!</h1>
@@ -53,19 +54,16 @@
               type="text"
               placeholder="Add task"
               class="input input-bordered w-full max-w-xs"
+              data-user-input
             />
           </form>
 
           <!-- Task Container -->
-          <div class="form-control" data-task-container>
+          <div class="form-control flex flex-col gap-1" data-task-container>
             <!-- Single Task -->
             <label class="label cursor-pointer">
               <span class="label-text">Remember me</span>
-              <input
-                type="checkbox"
-                
-                class="checkbox checkbox-primary"
-              />
+              <input type="checkbox" class="checkbox checkbox-primary" />
             </label>
             <label class="label cursor-pointer bg-slate-300 rounded p-2">
               <span class="label-text">Remember me</span>
@@ -75,6 +73,7 @@
                 class="checkbox checkbox-primary"
               />
             </label>
+            
           </div>
         </div>
       </div>
@@ -86,8 +85,9 @@
     <footer class="footer footer-center bg-base-300 text-base-content p-4">
       <aside>
         <p>
-          Copyright © {new Date().getFullYear()} - All right reserved by
-          <a href="https://github.com/gliese-sketch">Gliese Sketch</a>
+          Copyright © <span class="show-year">2024</span> - All right reserved
+          by
+          <a href="https://github.com/pankaj-maker">pankaj</a>
         </p>
       </aside>
     </footer>
