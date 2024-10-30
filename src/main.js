@@ -3,6 +3,7 @@ import "./index.css";
 import SingleTask from "./components/SingleTask";
 import { titleCase,randomId } from "./utils";
 import localforage from "localforage";
+import { sortBy } from "lodash";
 
 // === MARK: DOM Selection
 const formEl = document.querySelector("[data-form]");
@@ -78,6 +79,7 @@ taskContainerEl.addEventListener("click",(e)=>{
     if(e.target.tagName==="INPUT"){
         toggleCompleted(e.target.id);
         state.sort((a,b)=> a.isCompleted - b.isCompleted)
+        state =sortBy(state,["isCompleted"])
         localforage.setItem("tasks",state)
         renderTasks();
         }
