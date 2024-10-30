@@ -2,14 +2,27 @@ import "./index.css";
 
 import SingleTask from "./components/SingleTask";
 import { titleCase,randomId } from "./utils";
+import localforage from "localforage";
 
 // === MARK: DOM Selection
 const formEl = document.querySelector("[data-form]");
 const inputEl = document.querySelector("[data-user-input]");
 const taskContainerEl = document.querySelector("[data-task-container]");
 
+
+
+
 // Variables
 let state = [];
+localforage.setDriver(localforage.LOCALSTORAGE);
+localforage.getItem("tasks").then((data)=>{
+  state=data || [];
+  renderTasks()
+
+})
+
+
+
 
 function toggleCompleted(id){
    state =state.map((task)=>{
@@ -19,7 +32,7 @@ function toggleCompleted(id){
         return task;
     })
  
- console.log(state);
+ localforage.setItem("tasks",state)
  
     
 }
@@ -36,7 +49,7 @@ function renderTasks() {
 formEl.addEventListener("submit", (e) => {
   e.preventDefault(); // Prevent refresh
   if (!inputEl.value) return; // Gaurd Clause
-
+  if(inputEl.value===":clearall")return clearTask()
   //  Creating new task
   const newTask = {
     text: titleCase(inputEl.value),
@@ -46,6 +59,7 @@ formEl.addEventListener("submit", (e) => {
 
   //  Adding
   state.unshift(newTask);
+  localforage.setItem("tasks",state)
 
   renderTasks();
 
@@ -63,6 +77,14 @@ showYearEl.textContent = new Date().getFullYear();
 taskContainerEl.addEventListener("click",(e)=>{
     if(e.target.tagName==="INPUT"){
         toggleCompleted(e.target.id);
+        state.sort((a,b)=> a.isCompleted - b.isCompleted)
+        localforage.setItem("tasks",state)
         renderTasks();
         }
 })
+function clearTask(){
+  state.length=0;
+  localforage.setItem("tasks",state)
+  renderTasks();
+  inputEl.value=""
+}
