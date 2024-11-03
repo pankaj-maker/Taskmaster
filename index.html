@@ -45,7 +45,7 @@
     <main class="min-h-screen flex justify-center items-center glass">
       <div class="card bg-slate-100 w-64 sm:w-80 shadow-2xl my-5">
         <figure>
-          <img src="public/patterns.webp" alt="Pattern" class="w-full h-52 object-cover" />
+          <img src="public/to-do.webp" alt="Pattern" class="w-full h-52  object-contain" />
         </figure>
         <div class="card-body">
           <h1 class="card-title mb-1">Taskey &mdash; Organize yourself!</h1>
@@ -59,7 +59,9 @@
               data-user-input
             />
           </form>
-
+          <div class="flex justify-center">
+          <button class="btn btn-active btn-ghost w-24 text-base">Clear</button>
+            </div>
           <!-- Task Container -->
           <div class="form-control flex flex-col gap-1" data-task-container>
             <!-- Single Task -->
@@ -67,17 +69,19 @@
           </div>
         </div>
       </div>
+      
     </main>
 
     <!-- 
       MARK: Footer
     -->
     <footer class="footer footer-center bg-base-300 text-base-content p-4">
+      
       <aside>
         <p>
           Copyright &copy; <span class="show-year">2030</span> - All right
           reserved by
-          <a href="https://github.com/pankaj-maker">Gliese Sketch</a>
+          <a href="https://github.com/pankaj-maker">pankaj-maker</a>
         </p>
       </aside>
     </footer>
